@@ -29,4 +29,11 @@ feature
 새로운 기능 개발 및 버그를 수정이 필요할 때마다 develop로 부터 분기하고
 수정 및 개발이 완료 되면 develop에 다시 합친다
 
+참고자료
+1
+https://parkstate.tistory.com/33
+
+2
+https://gmlwjd9405.github.io/2018/05/11/types-of-git-branch.html
+
 
