@@ -44,7 +44,7 @@ public class math {
 
 	}
 
-	public static void Input(int count2) {
+	public static void NumberInput(int count2) {
 		if (Array1.length < count2) {
 			System.out.println("최대 입력 가능한 숫자의 개수는 7개 입니다.");
 		} else {
@@ -69,7 +69,7 @@ public class math {
 
 	public static void SC(int Num, int Num2) {
 
-		Input(Num);
+		NumberInput(Num);
 
 		switch (Num2) {
 		case 1:
@@ -104,27 +104,30 @@ public class math {
 
 	public static void main(String[] args) {
 
-		Input2();
+		boolean cmd = true;
+		System.out.println("[계산기 메뉴]\n1.실행\n2.종료");
+		int cmd2 = sc.nextInt();
 
-		Output();
-		System.out.println("이 값에 이어 연산을 더 하시겠습니까?) 1.yes 2.no");
-		while (Cmd) {
-			System.out.println("1.yes 2.no");
-			int Cmd2 = sc.nextInt();
-			switch (Cmd2) {
-			case 1:
-				Input2();
-				Output();
-				break;
-			case 2:
-				System.out.println("종료");
-				Cmd = false;
-				sc.close();
-				break;
-
-			default:
-				System.out.println("1과 2중에 골라주세요.");
-				break;
+		while (cmd) {
+			try {
+				switch (cmd2) {
+				case 1:
+					Input2();
+					Output();
+					System.out.println("[계산기 메뉴]\n1.실행\n2.종료");
+					cmd2 = sc.nextInt();
+					break;
+				case 2:
+					System.out.println("계산기를 종료합니다.");
+					sc.close();
+					cmd = false;
+					break;
+				default:
+					System.out.println("1과 2중에서만 입력해주세요");
+					break;
+				}
+			} catch (Exception e) {
+				System.out.println("숫자만 입력해주세요.");
 			}
 		}
 	}
